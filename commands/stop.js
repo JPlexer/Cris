@@ -3,7 +3,7 @@ exports.run = async(client, message, args, guild) => {
     client.guildm[message.guild.id].queue.length = 0;
     client.guildm[message.guild.id].dispatcher.end();
     const embed = new Discord.RichEmbed()
-    .setAuthor(`Cris`, client.user.avatarURL)
+    .setAuthor(`Pixl`, client.user.avatarURL)
     .setDescription(`Music`)
     .setColor(0x16ff00)
     .addField(`Stop`, `The Music is now stopped!`, true )

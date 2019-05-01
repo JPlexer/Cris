@@ -4,6 +4,7 @@ const getYouTubeID = require("get-youtube-id");
 const yt_api_key = process.env.YT_TOKEN;
 const ytpl = require("youtube-playlist");
 const fetchVideoInfo = require("youtube-info");
+const Discord = require('discord.js');
 module.exports = (client) => {
   client.guildm = {};
 
@@ -139,23 +140,46 @@ module.exports = (client) => {
         client.guildm[message.guild.id].queue.push(id);
       }
     },
+    
 
-    client.getID = function (str, message, client, cb, ) {
-      if (str.toString().includes("list=")) {
+    client.getID = async (str, message, client, guild, cb ) => {
+     /* if (str.toString().includes("list=")) {
         ytpl(str.toString(), 'url').then(res => {
           res1 = res.data.playlist.slice(0, 1);
           res2 = res.data.playlist.slice(1);
           cb(getYouTubeID(res1));
-          res2.forEach(function (url) { 
-            //client.add_to_queue(id, client, message);
-            idd = getYouTubeID(url)
-            client.guildm[message.guild.id].queue.push(idd);
-            fetchVideoInfo(idd, (err, { title }) => {
-              if (err) throw new Error(err);
-              client.guildm[message.guild.id].queueNames.push(title);
-            });});
+          res2.forEach(async function (url) { 
+            id = getYouTubeID(url)
+              client.add_to_queue(id, message, client);
+              fetchVideoInfo(id, (err, {
+                title
+              }) => {
+                if (err) throw new Error(err);
+                const embed = new Discord.RichEmbed()
+                .setAuthor(`Cris`, client.user.avatarURL)
+                .setDescription(`Music`)
+                .setColor(0x16ff00)
+                .addField(`Your Requested Song`, `\n${title}\n has been added to the Queue! `, true )
+                .setFooter('Designed and Programed by Swingin30, Alee, TechLion and JPlexer Copyright 2019, Licensed with GPL-3.0');
+                message.channel.send({ embed });
+                //message.reply(` your Requested Song, **${title}** was added to the Queue!`);
+                client.guildm[message.guild.id].queueNames.push(title);
+              });
+            //client.add_to_queue(id, message, client);
+            /*console.log(url)
+            id = getYouTubeID(url)
+            console.log(id)
+          //client.playMusic(id, message, guild, client);
+          client.guildm[message.guild.id].queue.push(id);
+            fetchVideoInfo(id, (err, { title }) => {
+                if (err) throw new Error(err);
+                console.log(title);
+                client.guildm[message.guild.id].queueNames.push(title);
+                
+              });
+            });
       })
-     } else {
+     } else {*/
       if (client.isYoutube(str)) {
         cb(getYouTubeID(str));
 
@@ -164,8 +188,8 @@ module.exports = (client) => {
           cb(id);
         });
       }
-    }
-  },
+    //}
+  };
 
 
 

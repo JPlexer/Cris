@@ -4,7 +4,7 @@ exports.run = async (client, message, args, guild) => {
         client.guildm[message.guild.id].dispatcher.pause();
         client.guildm[message.guild.id].paused = true;
         const embed = new Discord.RichEmbed()
-        .setAuthor(`Cris`, client.user.avatarURL)
+        .setAuthor(`Pixl`, client.user.avatarURL)
         .setDescription(`Music`)
         .setColor(0x16ff00)
         .addField(`Current Song`, `${client.guildm[message.guild.id].queueNames[0]} is now paused.\n To resume type ${client.config.prefix}pause again.`, true )
@@ -17,7 +17,7 @@ exports.run = async (client, message, args, guild) => {
         client.guildm[message.guild.id].paused = false;
         //message.channel.send('OK, I resumed the Music!')
         const embed = new Discord.RichEmbed()
-        .setAuthor(`Cris`, client.user.avatarURL)
+        .setAuthor(`Pixl`, client.user.avatarURL)
         .setDescription(`Music`)
         .setColor(0x16ff00)
         .addField(`Current Song`, `${client.guildm[message.guild.id].queueNames[0]} is now resumed.`, true )

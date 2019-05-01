@@ -5,7 +5,7 @@ module.exports.run = async (client, msg) => {
         const member = msg.guild.member(user);
         if (member) {
           const embed = new Discord.RichEmbed()
-          .setAuthor(`Cris`, client.user.avatarURL)
+          .setAuthor(`Pixl`, client.user.avatarURL)
           .setDescription(`Profile Picture`)
           .setColor(0x16ff00)
           .setImage(user.avatarURL)
@@ -14,7 +14,7 @@ module.exports.run = async (client, msg) => {
        }
     }else{
         const embed = new Discord.RichEmbed()
-        .setAuthor(`Cris`, client.user.avatarURL)
+        .setAuthor(`Pixl`, client.user.avatarURL)
         .setDescription(`Profile Picture`)
         .setColor(0x16ff00)
         .setImage(msg.author.avatarURL)

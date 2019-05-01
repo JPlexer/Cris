@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 exports.run = async(client, message, args) => { // eslint-disable-line no-unused-vars
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
   const embed = new Discord.RichEmbed()
-  .setAuthor(`Cris`, client.user.avatarURL)
+  .setAuthor(`Pixl`, client.user.avatarURL)
   .setDescription(`Stats`)
   .setColor(0x16ff00)
   .addField(`Mem Usage`, `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true )

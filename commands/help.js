@@ -12,8 +12,8 @@ module.exports.run = async (client, message, args) => {
 
   if (!message.guild.member(client.user).hasPermission('EMBED_LINKS')) return message.reply('ERROR: Cris doesn\'t have the permission to send embed links please enable them to use the full help.');
   const embed = new Discord.RichEmbed()
-    .setAuthor(`Cris Help`, client.user.avatarURL)
-    .setDescription('Every command you input into Cris requires the prefix `' + require('../config.js').prefix + '`')
+    .setAuthor(`Pixl Help`, client.user.avatarURL)
+    .setDescription('Every command you input into Pixl requires the prefix `' + require('../config.js').prefix + '`')
     .setColor(0x16ff00)
     .setFooter('Designed and Programed by Swingin30, Alee, TechLion and JPlexer Copyright 2019, Licensed with GPL-3.0');
 

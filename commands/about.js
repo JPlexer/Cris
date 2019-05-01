@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = async (client, message, args) => { 
   const embed = new Discord.RichEmbed()
-    .setAuthor(`Cris`, client.user.avatarURL)
+    .setAuthor(`Pixl`, client.user.avatarURL)
     .setDescription(`About`)
     .setColor(0x16ff00)
     .addField(`Creator`, `JPlexer`, true )

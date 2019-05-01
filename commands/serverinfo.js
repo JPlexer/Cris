@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = async(client, message, args) => { // eslint-disable-line no-unused-vars
   const embed = new Discord.RichEmbed()
-  .setAuthor(`Cris`, client.user.avatarURL)
+  .setAuthor(`Pixl`, client.user.avatarURL)
   .setDescription(`Serverinfo`)
   .setColor(0x16ff00)
   .addField(`Server Name`, `${message.guild.name}`, true )
